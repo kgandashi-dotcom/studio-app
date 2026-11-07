@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Studio: finishing Instagram sign-in</title>
+<style>body{font:16px/1.6 system-ui,sans-serif;max-width:560px;margin:60px auto;padding:0 16px;color:#1f2328}</style>
+</head>
+<body>
+<p>Finishing the Instagram sign-in on this computer…</p>
+<p id="note" hidden>If nothing happens, the Studio is not running on this computer. Start it and connect again.</p>
+<script>
+  // Meta only redirects to https pages. This page hands the one-time code to the Studio running on the same computer.
+  location.replace("http://127.0.0.1:8787/api/instagram/callback" + location.search);
+  setTimeout(function () { document.getElementById("note").hidden = false; }, 4000);
+</script>
+</body>
+</html>
